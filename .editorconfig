@@ -1,0 +1,5 @@
+root = true
+
+# C++ / C# source files: save as UTF-8 with BOM so MSVC reads Korean comments correctly
+[*.{h,hpp,cpp,inl,cs}]
+charset = utf-8-bom
