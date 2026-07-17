@@ -30,7 +30,7 @@ AMyActor::AMyActor() //Constructor
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(Root); //부모 지정
 
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> SphereMesh(TEXT("/Engine/BasicShapes/Sphere.Sphere'"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> SphereMesh(TEXT("/Engine/BasicShapes/Sphere.Sphere"));
 	if (SphereMesh.Succeeded())
 	{
 		Mesh->SetStaticMesh(SphereMesh.Object);
@@ -62,3 +62,7 @@ void AMyActor::Instantiate()
 	GetWorld()->SpawnActor<AMyActor>(AMyActor::StaticClass(), FVector3d(0.0f,0.0f,0.0f), FRotator(0.0f, 0.0f, 0.0f), Params);
 }
 
+void AMyActor::PrintLog()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Function Call."), Value);
+}

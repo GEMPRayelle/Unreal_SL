@@ -28,4 +28,10 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	void Instantiate();
 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="IsntGannaUse")
+	float Value;
+
+	UFUNCTION(BlueprintCallable, Category="IsntGannaUse")
+	void PrintLog();
 };
